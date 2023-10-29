@@ -1,6 +1,6 @@
 This project does a deep comparison of 2 objects/array and returns the difference between the 2 objects.
 
-![Screenshot](assets/screenshot.png)
+![Screenshot](assets/Screenshot1.png)
 
 - The red div displays the value that got deleted / updated 
 - The green fiv displays the value that got added / updated
@@ -91,11 +91,6 @@ Template for vite, React + tailwindcss + TypeScript projects with some tools pre
 - [Prettier 2](https://prettier.io/)
 - [VS Code settings](https://code.visualstudio.com/)
 
-## Usage
-
-Create a new project from this template by clicking the "Use this template" button:
-
-![](assets/template-usage.png)
 
 ```bash
 yarn
