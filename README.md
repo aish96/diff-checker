@@ -1,3 +1,67 @@
+This project does a deep comparison of 2 objects/array and returns the difference between the 2 objects.
+
+![Screenshot](assets/screenshot.png)
+
+- The red div displays the value that got deleted / updated 
+- The green fiv displays the value that got added / updated
+
+### Features
+- Compare two objects and identify values that were added, updated, deleted, or unchanged.
+- Ability to ignore specific properties using regex patterns.
+- Option to ignore array sequence changes, treating arrays as sets.
+- Option to test arrays with a key instead of index ( defaults to index )
+- Option to check against case insensitivity
+- Visual representation of the differences using a React component.
+
+
+## Components:
+
+- ObjectEditor: simple textarea to write objects
+- DiffViewer: to view changes in the objects
+- utils: main utils which contains the magic sauce to calculate object diff
+
+
+## Options
+
+
+#### `deepDiffMapper.map(obj1, obj2, options)`
+
+| Parameter | Type     | Default | Description                               |
+| --------- | -------- | ------- | ----------------------------------------- |
+| `obj1`    | `object` | -       | The first object to compare.              |
+| `obj2`    | `object` | -       | The second object to compare.             |
+| `options` | `object` | `{}`    | Configuration options. See details below. |
+
+#### Options:
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `caseInsensitive` | `boolean` | `false` | If set to `true`, string comparisons will be case-insensitive. |
+| `keyForArrayCheck` | `string` | `null` | When comparing arrays of objects, specify a key to match objects (like an ID). |
+| `ignoreList` | `array` | `[]` | An array of regex patterns. If a key matches any pattern, changes to that key will be treated as unchanged. |
+| `ignoreArraySequence` | `boolean` | `false` | If set to `true`, the order of arrays will not affect the comparison. |
+
+**Example:**
+
+```javascript
+const diff = deepDiffMapper.map(obj1, obj2, {
+  caseInsensitive: true,
+  keyForArrayCheck: 'id',
+  ignoreList: [/company\.departments\.teamLead/, /age/],
+  ignoreArraySequence: true
+})
+```
+
+---
+
+This format clearly represents the available options and their descriptions for the user to reference.
+
+
+
+
+
+
+
 # vite React TypeScript tailwindcss starter
 
 Template for vite, React + tailwindcss + TypeScript projects with some tools preconfigured.
@@ -6,7 +70,6 @@ Template for vite, React + tailwindcss + TypeScript projects with some tools pre
 
 Template for vite, React + tailwindcss + TypeScript projects with some tools preconfigured.
 
-![Screenshot](assets/screenshot.png)
 
 ### Libraries
 
